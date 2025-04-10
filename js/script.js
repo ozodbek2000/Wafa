@@ -77,7 +77,7 @@ $(document).ready(function() {
       
       // Custom icon (optional)
       const customIcon = L.icon({
-      iconUrl: '../img/png/icon.png', // example icon
+      iconUrl: './img/png/icon.png', // example icon
       iconSize: [32, 39],
       iconAnchor: [15, 25]
       });
