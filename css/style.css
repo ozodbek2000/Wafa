@@ -118,7 +118,7 @@ body{
   --bg-transparent: rgba(233, 233, 233, 0.3);
   --white-green: #E1F1EB;
 
-
+  --size-32-20: 32px;
   --size-24-18: 24px;
   --size-20-16: 20px;
   --text-subtitle: 18px;
@@ -177,6 +177,7 @@ body.active {
 }
 @media (max-width: 1270px) {
   :root {
+    --size-32-20: 24px;
     --size-24-18: 20px;
     --size-20-16: 18px;
     --text-size: 14px;
@@ -198,6 +199,7 @@ body.active {
 }
 @media (max-width: 696px) {
   :root {
+    --size-32-20: 20px;
     --size-24-18: 18px;
     --size-20-16: 16px;
     --text-size: 12px;
@@ -1033,6 +1035,7 @@ body.active .our__card:hover, body.active .our__card:hover .our__text, body.acti
     padding: 61px 19px 16px 19px;
     gap: 24px;
     max-width: 100%;
+    border-radius: 24px;
   }
   .calc__info {
     padding: 16px 19px;
@@ -1131,6 +1134,7 @@ body.active .our__card:hover, body.active .our__card:hover .our__text, body.acti
   .partner__box {
     padding: 16px 16px 0px 16px;
     flex-direction: column-reverse;
+    border-radius: 24px;
   }
   .partner__grid {
     gap: 8px;
@@ -1264,12 +1268,171 @@ body.active .our__card:hover, body.active .our__card:hover .our__text, body.acti
     margin-top: 32px;
   }
   .how__map {
-    height: 221px;
+    height: 251px;
   }
   .map {
     height: 100% !important;
   }
 }
 @media (max-width: 696px) {
-    
+  .how {
+  }
+  .how__container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .how__container > svg{
+  }
+  .how__container > svg path{
+  }
+  .how__info {
+    margin-top: 56px;
+  }
+  .how__subtitle {
+  }
+  .how__title {
+    margin: 8px 0px 16px 0px;
+  }
+  .how__address {
+    margin-bottom: 12px;
+  }
+  .how__map {
+    height: 221px;
+  }
+}
+/* FOOTER SECTION ======================================================================= */
+.footer {
+  padding: 64px 0px;
+}
+.footer__container {
+}
+.footer__title {
+  margin-bottom: 32px;
+}
+.footer__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+.footer__card_news {
+  position: relative;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  padding-right: 50% !important;
+  border: 0px !important;
+}
+.footer__card_news > img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 24px;
+}
+.footer__card_news .footer__card_title {
+  font-size: var(--size-32-20);
+  color: var(--black);
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 1.2;
+  font-family: sans-serif;
+}
+.footer__card_title {
+  max-width: 320px;
+  font-size: var(--size-24-18);
+  font-weight: 700;
+}
+.footer__card_text {
+  opacity: 1;
+  line-height: 1.4;
+  margin: 24px 0px;
+  max-width: 320px;
+}
+.footer__card_about {
+  text-decoration: underline;
+  font-family: Montserrat;
+  font-weight: 700;
+  color: var(--bg-green);
+}
+.footer__card {
+  padding: 32px;
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  border: 1px solid rgba(224, 224, 224, 1);
+  background: var(--bg-transparent) !important;
+}
+@media (max-width: 1270px) {
+  .footer {
+    padding: 24px 0px;
+  }
+  .footer__container {
+  }
+  .footer__title {
+    margin-bottom: 24px;
+  }
+  .footer__grid {
+  }
+  .footer__card_news {
+    padding-right: 0% !important;
+    padding-bottom: 50% !important;
+  }
+  .footer__card_news > img {
+    top: auto;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 50%;
+  }
+  .footer__card_news .footer__card_title {
+  }
+  .footer__card_title {
+  }
+  .footer__card_text {
+  }
+  .footer__card_about {
+  }
+  .footer__card {
+    padding: 16px;
+  }
+}
+@media (max-width: 696px) {
+  .footer {
+  }
+  .footer__container {
+  }
+  .footer__title {
+  }
+  .footer__grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 16px;
+  }
+  .footer__card_news {
+    padding-right: 0% !important;
+    padding-bottom: calc(50% + 24px) !important;
+    grid-column-start: inherit;
+    grid-column-end: inherit;
+    grid-row-start: inherit;
+    grid-row-end: inherit;
+  }
+  .footer__card_news > img {
+    top: auto;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 50%;
+  }
+  .footer__card_news .footer__card_title {
+    font-weight: 500;
+  }
+  .footer__card_title {
+  }
+  .footer__card_text {
+  }
+  .footer__card_about {
+  }
+  .footer__card {
+    padding: 16px;
+  }
 }

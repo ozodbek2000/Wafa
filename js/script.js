@@ -10,6 +10,29 @@ $(document).ready(function() {
         $('body').toggleClass('active');
     });
 
+    //CALCULATOR
+    $('.calc__item').each(function () {
+      const $item = $(this);
+      const $range = $item.find('input[type="range"]');
+      const $priceDiv = $item.find('.calc__price > div');
+      const $span = $priceDiv.find('span');
+  
+      function formatNumber(num) {
+        return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+      }
+  
+      $range.on('input', function () {
+        const val = $(this).val();
+        const unit = $span.text().trim();
+        const formatted = formatNumber(val);
+  
+        // Update only the text before the span
+        $priceDiv.contents().filter(function () {
+          return this.nodeType === 3; // text node
+        }).first().replaceWith(formatted + ' ');
+      });
+    });
+
     // RANGE INPUT
     function updateRangeBg($range) {
         const min = Number($range.attr('min'));
@@ -40,6 +63,11 @@ $(document).ready(function() {
       attribution: '',
       noWrap: true
       }).addTo(map);
+
+      // Adjust zoom level based on screen width
+      if (window.innerWidth < 696) {
+          map.setZoom(15);
+      }
 
       // Disable zoom control buttons
       map.zoomControl.remove();
