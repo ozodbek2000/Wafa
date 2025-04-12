@@ -18,7 +18,26 @@ $(document).ready(function() {
       const icon = $parentBuy.find('a svg'); // Save the SVG icon within the same calc__buy
       $parentBuy.find('a').html(selectedText).append(icon); // Set text and append icon back
     });
+    function toggleHeaderLang(event) {
+      event.preventDefault(); // Prevent default link behavior
+      const $target = $(event.target);
 
+      if ($target.closest('.header__lang > a').length) {
+      $target.closest('.header__lang').toggleClass('active');
+      } else if ($target.closest('.header__lang > ul > li > a').length) {
+      $('.header__lang').removeClass('active');
+      } else if (!$(event.target).closest('.header__lang').length) {
+      $('.header__lang').removeClass('active');
+      }
+    }
+
+    $(document).on('click', toggleHeaderLang);
+
+    $(document).click(function(event) {
+      if (!$(event.target).closest('.header__lang').length) {
+      $('.header__lang').removeClass('active');
+      }
+    });
     //CALCULATOR
     $('.calc__item').each(function () {
       const $item = $(this);
