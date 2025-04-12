@@ -38,6 +38,22 @@ $(document).ready(function() {
       $('.header__lang').removeClass('active');
       }
     });
+    // ANIMATION OF BLOCKS
+    $(document).ready(function () {
+      const $elements = $("[data-animate]");
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            $(entry.target).addClass($(entry.target).data("animate"));
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      $elements.each(function () {
+        observer.observe(this);
+      });
+    });
     //CALCULATOR
     $('.calc__item').each(function () {
       const $item = $(this);

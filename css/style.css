@@ -90,8 +90,6 @@ body{
   font-size: 16px;
   font-weight: 400;
   color: var(--black);
-
-
   background-image: url(../img/background/white-bg.jpg);
   background-size: cover;
 }
@@ -196,6 +194,12 @@ body.active {
   .button {
     width: 183px;
   }
+  body {
+    background-image: url(../img/jpg/white-tablet-bg.jpg);
+  }
+  body.active {
+    background-image: url(../img/jpg/black-tablet-bg.jpg);
+  }
 }
 @media (max-width: 696px) {
   :root {
@@ -218,6 +222,12 @@ body.active {
   .button {
     padding: 8px;
     height: 38px;
+  }
+  body {
+    background-image: url(../img/jpg/white-mobile-bg.jpg);
+  }
+  body.active {
+    background-image: url(../img/jpg/black-mobile-bg.jpg);
   }
 }
 
