@@ -9,49 +9,101 @@ $(document).ready(function() {
     $('.main__switcher').click(function(event) {
         $('body').toggleClass('active');
     });
+    $('.calc__buy').click(function(event) {
+        $(this).toggleClass('active');
+    });
+    $('.calc__dropdown li').on('click', function () {
+      const $parentBuy = $(this).closest('.calc__buy'); // Get the closest calc__buy container
+      const selectedText = $(this).text(); // Get clicked li text
+      const icon = $parentBuy.find('a svg'); // Save the SVG icon within the same calc__buy
+      $parentBuy.find('a').html(selectedText).append(icon); // Set text and append icon back
+    });
 
     //CALCULATOR
     $('.calc__item').each(function () {
       const $item = $(this);
       const $range = $item.find('input[type="range"]');
-      const $priceDiv = $item.find('.calc__price > div');
-      const $span = $priceDiv.find('span');
-  
+      const $priceInput = $item.find('.calc__price input[type="text"], .calc__price input[type="number"]');
+    
       function formatNumber(num) {
         return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
       }
-  
+    
+      function cleanNumber(val) {
+        return val.toString().replace(/\D/g, '');
+      }
+    
+      function syncFromRange() {
+        const val = $range.val();
+        $priceInput.val(formatNumber(val));
+      }
+    
+      function syncFromInput() {
+        const rawVal = $priceInput.val();
+        let cleaned = cleanNumber(rawVal);
+    
+        const max = parseInt($priceInput.attr('max'), 10);
+        if (!isNaN(max) && parseInt(cleaned, 10) > max) {
+          cleaned = max.toString();
+        }
+    
+        $priceInput.val(formatNumber(cleaned));
+        $range.val(cleaned);
+      }
+    
       $range.on('input', function () {
-        const val = $(this).val();
-        const unit = $span.text().trim();
-        const formatted = formatNumber(val);
-  
-        // Update only the text before the span
-        $priceDiv.contents().filter(function () {
-          return this.nodeType === 3; // text node
-        }).first().replaceWith(formatted + ' ');
+        syncFromRange();
+      });
+    
+      $priceInput.on('input', function () {
+        syncFromInput();
+      });
+    
+      // Initialize on page load
+      syncFromRange();
+    });
+    
+    // RANGE INPUT
+    function updateRangeBg($range) {
+      const min = Number($range.attr('min'));
+      const max = Number($range.attr('max'));
+      const val = Number($range.val());
+      const percentage = ((val - min) / (max - min)) * 100;
+    
+      $range.css('background', `linear-gradient(to right, var(--bg-green) 0%, var(--bg-green) ${percentage}%, #ddd ${percentage}%, #ddd 100%)`);
+    }
+    
+    $(document).ready(function () {
+      $('input[type="range"]').each(function () {
+      updateRangeBg($(this)); // initialize on load
+      });
+    
+      $('input[type="range"]').on('input change', function () {
+      updateRangeBg($(this));
+      });
+
+      $('.calc__price input[type="text"], .calc__price input[type="number"]').on('input', function () {
+      const $input = $(this);
+      const $range = $input.closest('.calc__item').find('input[type="range"]');
+      const rawVal = $input.val().replace(/\D/g, ''); // Remove non-numeric characters
+      const max = parseFloat($range.attr('max'));
+      const min = parseFloat($range.attr('min'));
+      let cleaned = parseFloat(rawVal);
+
+      if (isNaN(cleaned)) {
+        cleaned = min; // Default to min if invalid
+      } else if (cleaned > max) {
+        cleaned = max; // Cap at max
+      } else if (cleaned < min) {
+        cleaned = min; // Cap at min
+      }
+
+      $input.val(cleaned.toLocaleString()); // Format with commas
+      $range.val(cleaned); // Sync range value
+      updateRangeBg($range); // Update range background
       });
     });
 
-    // RANGE INPUT
-    function updateRangeBg($range) {
-        const min = Number($range.attr('min'));
-        const max = Number($range.attr('max'));
-        const val = Number($range.val());
-        const percentage = ((val - min) / (max - min)) * 100;
-    
-        $range.css('background', `linear-gradient(to right, var(--bg-green) 0%, var(--bg-green) ${percentage}%, #ddd ${percentage}%, #ddd 100%)`);
-      }
-    
-      $(document).ready(function () {
-        $('input[type="range"]').each(function () {
-          updateRangeBg($(this)); // initialize on load
-        });
-    
-        $('input[type="range"]').on('input change', function () {
-          updateRangeBg($(this));
-        });
-    });
     // LEAFLET MAP 
     $(document).ready(function () {
       const centerLatLng = [41.37382608808563, 69.27000330564698]; // Example: Tashkent
@@ -97,3 +149,48 @@ $(document).ready(function() {
       }).addTo(map);
     });
 })
+
+new Swiper('.partner__grid', {
+  slidesPerView: 2,
+  spaceBetween: 0,
+  direction: "vertical",
+  autoplay: {
+    delay: 0,
+    disableOnInteraction: false,
+  },
+  speed: 1000,
+  loop: true,
+  breakpoints: {
+    1270: { 
+      slidesPerView: 2.0,
+    },
+    1020: { 
+      slidesPerView: 3.0,
+    },
+    1020: { 
+      slidesPerView: 3.5,
+    },
+    768: { 
+      slidesPerView: 4.2,
+    },
+    696: { 
+      slidesPerView: 4,
+    },
+    520: { 
+      slidesPerView: 2,
+    },
+    420: { 
+      slidesPerView: 2.7,
+    },
+    320: { 
+      slidesPerView: 3,
+    },
+    200: { 
+      slidesPerView: 2.5,
+    },
+    1: { 
+      slidesPerView: 4,
+    },
+  }
+});
+

@@ -12,6 +12,7 @@
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Wafa Invest</title>
 </head>
@@ -30,7 +31,7 @@
     <div class="wrapper">
         <section class="main">
             <div class="main__container">
-                <div class="main__title">
+                <div class="main__title animate__animated animate__fadeInDown">
                     <span>Будущее финансов</span>
                     <a href="##">подробнее <div>
                         <svg class="arrow-right" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -44,7 +45,7 @@
                     </div></a>
                     <span>по законам</span><span class="main__shariah"> <img src="./img/svg/pattern.svg" alt="#"> Шариата</span>
                 </div>
-                <div class="main__advantages">
+                <div class="main__advantages animate__fadeInDownBig animate__animated">
                     <div class="main__advantage">
                         <div class="main__advantage_title">Гарантия безопасности</div>
                         <div class="main__advantage_text">Технологичное и этичное финансирование без риба</div>
@@ -65,8 +66,8 @@
         </section>
         <section class="we">
             <div class="we__container">
-                <img class="animate__fadeInLeft animate__animated" src="./img/png/box.png" alt="#">
-                <div class="we__box">
+                <img class="img " src="./img/png/box.png" alt="#">
+                <div class="we__box animate__fadeInDown animate__animated wow ">
                     <div class="we__subtitle subtitle">Кто мы?</div>
                     <div class="we__title title">Мы WAFA</div>
                     <div class="we__text text">Мы – инновационная исламская финансовая платформа, предлагающая передовые решения на основе шариатских принципов. Наши услуги объединяют традиционные ценности и современные технологии, гарантируя честность, прозрачность и справедливость.</div>
@@ -116,7 +117,15 @@
                         <img src="./img/png/wafa logo.png" alt="#">
                         <div class="our__card_title">Микрозайм</div>
                         <div class="our__text text">никаких скрытых комиссий или процентов.</div>
-                        <a href="##" class="our__about">Подробнее</a>
+                        <div class="our__card_hidden">
+                            <div class="our__card_hidden-title">Условия микрозайма:</div>
+                            <ul>
+                                <li>Сумма: от 500 000 до 10 000 000 сум</li>
+                                <li>Срок возврата: до 30 дней</li>
+                                <li>Без залога и поручителей</li>
+                                <li>Решение за 15 минут в нашем офисе</li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="our__card">
                         <svg width="48" height="49" viewBox="0 0 48 49" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -139,7 +148,19 @@
                         <img src="./img/png/wafa logo.png" alt="#">
                         <div class="our__card_title">Микрозайм</div>
                         <div class="our__text text">сочетание цифровых технологий с исламскими принципами.</div>
-                        <a href="##" class="our__about">Подробнее</a>
+                        <div class="our__card_hidden">
+                            <div class="our__card_hidden-title">Условия микрозайма:</div>
+                            <ul>
+                                <li>Сумма: от 500 000 до 10 000 000 сум</li>
+                                <li>Срок возврата: до 30 дней</li>
+                                <li>Без залога и поручителей</li>
+                                <li>Решение за 15 минут в нашем офисе</li>
+                                <li>Сумма: от 500 000 до 10 000 000 сум</li>
+                                <li>Срок возврата: до 30 дней</li>
+                                <li>Без залога и поручителей</li>
+                                <li>Решение за 15 минут в нашем офисе</li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="our__card">
                         <svg width="48" height="49" viewBox="0 0 48 49" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -162,7 +183,17 @@
                         <img src="./img/png/wafa logo.png" alt="#">
                         <div class="our__card_title">Микрозайм</div>
                         <div class="our__text text">персонализированные финансовые продукты.</div>
-                        <a href="##" class="our__about">Подробнее</a>
+                        <div class="our__card_hidden">
+                            <div class="our__card_hidden-title">Условия микрозайма:</div>
+                            <ul>
+                                <li>Сумма: от 500 000 до 10 000 000 сум</li>
+                                <li>Срок возврата: до 30 дней</li>
+                                <li>Без залога и поручителей</li>
+                                <li>Решение за 15 минут в нашем офисе</li>
+                                <li>Сумма: от 500 000 до 10 000 000 сум</li>
+                                <li>Срок возврата: до 30 дней</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -175,12 +206,55 @@
                         <div class="calc__subtitle subtitle">Калькулятор</div>
                         <div class="calc__title title">Рассчитайте платеж</div>
                     </div>
+                    <div class="calc__dropdowns">
+                        <div class="calc__buy">
+                            <a href="##">
+                                Цель финансирование 
+                                <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5 8.03369L10 13.0337L15 8.03369" stroke="#808080" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                            <ul class="calc__dropdown">
+                                <li>Покупка автомобиля</li>
+                                <li>Покупка недвижемости</li>
+                            </ul>
+                        </div>
+                        <div class="calc__buy">
+                            <a href="##">
+                                Тип финансирование 
+                                <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5 8.03369L10 13.0337L15 8.03369" stroke="#808080" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                            <ul class="calc__dropdown">
+                                <li>Murabaha</li>
+                                <li>Ijarah</li>
+                            </ul>
+                        </div>
+                    </div>
                     <div class="calc__item">
                         <div class="calc__price">
                             <p>Cтоимость товара</p>
-                            <div>300 000 <span>UZS</span></div>
+                            <div>
+                                <input value="0" min="10000000" max="1000000000" type="text">
+                                <span>UZS</span>
+                            </div>
                         </div>
-                        <input step="1000000" type="range" min="10000000" max="1000000000">
+                        <input step="1000000" type="range" min="0" max="1000000000">
+                        <div class="calc__num">
+                            <span>10 000 000 UZS</span>
+                            <span>1 000 000 000 UZS</span>
+                        </div>
+                    </div>
+                    <div class="calc__item">
+                        <div class="calc__price">
+                            <p>Размер первоначального взноса</p>
+                            <div>
+                                <input value="10000" min="0" max="1000000000" type="text">
+                                <span>UZS</span>
+                            </div>
+                        </div>
+                        <input step="10000" type="range" min="0" max="1000000000">
                         <div class="calc__num">
                             <span>10 000 000 UZS</span>
                             <span>1 000 000 000 UZS</span>
@@ -189,9 +263,12 @@
                     <div class="calc__item">
                         <div class="calc__price">
                             <p>Cрок рассрочки</p>
-                            <div>6 <span>месяца</span></div>
+                            <div>
+                                <input type="number" min="0" max="1000000000" type="text">
+                                <span>месяца</span>
+                            </div>
                         </div>
-                        <input step="6" type="range" min="6" max="60">
+                        <input step="6" type="range" min="0" max="60">
                         <div class="calc__num">
                             <span>2 месяца</span>
                             <span>60 месяца</span>
@@ -200,9 +277,12 @@
                     <div class="calc__item">
                         <div class="calc__price">
                             <p>Процентная ставка</p>
-                            <div>45 <span>%</span></div>
+                            <div>
+                                <input type="number" min="0" max="75" type="text">
+                                <span>%</span>
+                            </div>
                         </div>
-                        <input step="0.5" type="range" min="10" max="75">
+                        <input step="0.5" type="range" min="0" max="75">
                         <div class="calc__num">
                             <span>10%</span>
                             <span>75%</span>
@@ -230,15 +310,57 @@
         <section class="partner">
             <div class="partner__container">
                 <div class="partner__box">
-                    <div class="partner__grid">
-                        <img src="./img/png/apex.png" alt="#">
-                        <img src="./img/png/apex.png" alt="#">
-                        <img src="./img/png/apex.png" alt="#">
-                        <img src="./img/png/apex.png" alt="#">
-                        <img src="./img/png/apex.png" alt="#">
-                        <img src="./img/png/apex.png" alt="#">
-                        <img src="./img/png/apex.png" alt="#">
-                        <img src="./img/png/apex.png" alt="#">
+                    <div class="partner__grid swiper-container">
+                        <div class="partner__wrapper swiper-wrapper">
+                            <div class="partner__slide swiper-slide">
+                                <img src="./img/png/apex.png" alt="#">
+                                <img src="./img/png/apex.png" alt="#">
+                            </div>
+                            <div class="partner__slide swiper-slide">
+                                <img src="./img/png/apex.png" alt="#">
+                                <img src="./img/png/apex.png" alt="#">
+                            </div>
+                            <div class="partner__slide swiper-slide">
+                                <img src="./img/png/apex.png" alt="#">
+                                <img src="./img/png/apex.png" alt="#">
+                            </div>
+                            <div class="partner__slide swiper-slide">
+                                <img src="./img/png/apex.png" alt="#">
+                                <img src="./img/png/apex.png" alt="#">
+                            </div>
+                            <div class="partner__slide swiper-slide">
+                                <img src="./img/png/apex.png" alt="#">
+                                <img src="./img/png/apex.png" alt="#">
+                            </div>
+                            <div class="partner__slide swiper-slide">
+                                <img src="./img/png/apex.png" alt="#">
+                                <img src="./img/png/apex.png" alt="#">
+                            </div>
+                            <div class="partner__slide swiper-slide">
+                                <img src="./img/png/apex.png" alt="#">
+                                <img src="./img/png/apex.png" alt="#">
+                            </div>
+                            <div class="partner__slide swiper-slide">
+                                <img src="./img/png/apex.png" alt="#">
+                                <img src="./img/png/apex.png" alt="#">
+                            </div>
+                            <div class="partner__slide swiper-slide">
+                                <img src="./img/png/apex.png" alt="#">
+                                <img src="./img/png/apex.png" alt="#">
+                            </div>
+                            <div class="partner__slide swiper-slide">
+                                <img src="./img/png/apex.png" alt="#">
+                                <img src="./img/png/apex.png" alt="#">
+                            </div>
+                            <div class="partner__slide swiper-slide">
+                                <img src="./img/png/apex.png" alt="#">
+                                <img src="./img/png/apex.png" alt="#">
+                            </div>
+                            <div class="partner__slide swiper-slide">
+                                <img src="./img/png/apex.png" alt="#">
+                                <img src="./img/png/apex.png" alt="#">
+                            </div>
+                        </div>
                     </div>
                     <div class="partner__info">
                         <svg width="49" height="48" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -326,6 +448,7 @@
     </footer>
     <script src="./js/jquery-3.4.1.slim.min.js"></script>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="./js/swiper-bundle.min.js"></script>
     <script src="./js/script.js"></script>
 </body>
 </html>
