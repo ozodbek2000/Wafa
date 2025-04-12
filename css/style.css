@@ -863,7 +863,7 @@ body.active .our__card:hover, body.active .our__card:hover .our__text, body.acti
   .our__grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
-    
+    height: inherit;
   }
   .our__card {
     padding: 88px 16px 16px;
@@ -1029,6 +1029,7 @@ body.active .our__card:hover, body.active .our__card:hover .our__text, body.acti
   display: flex;
   align-items: center;
   cursor: pointer;
+  color: #000;
 }
 .calc__dropdown > li:hover {
   background-color: #FFD452;
