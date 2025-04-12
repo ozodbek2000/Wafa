@@ -321,6 +321,12 @@ input[type="range"]::-moz-range-thumb {
   font-weight: 700;
   font-size: var(--text-size);
   text-transform: uppercase;
+  color: var(--black);
+  transition: 0.3s ease all;
+}
+.header__lang > a svg path {
+  stroke: var(--black) ;
+  transition: 0.3s ease all;
 }
 .header__lang > ul {
   position: absolute;
@@ -354,6 +360,8 @@ input[type="range"]::-moz-range-thumb {
   font-weight: 700;
   font-size: var(--text-size);
   padding: 4px 0px;
+  color: var(--black);
+  transition: 0.3s ease all;
 }
 /* Main =============================================================================== */
 .main {
